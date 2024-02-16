@@ -6,13 +6,19 @@ const mongoose = require("mongoose");
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://motion-canvas-ashen.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+ }
+));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hello to Fitness Tracker API");
 });
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://Sudip:Sudip12345@motioncanvas.gaypobr.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
     console.log('Connected to MongoDB');
   })
