@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors(
   {
-    origin: ["https://motion-canvas-ashen.vercel.app"],
+    origin: ["https://motion-canvas-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
  }
