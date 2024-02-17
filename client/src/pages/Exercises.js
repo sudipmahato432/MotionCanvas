@@ -19,7 +19,7 @@ export default function Exercises() {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:5001/users")
+      .get("https://motion-canvas-ashen.vercel.app/users")
       .then((response) => {
         console.log(response.data)
         if (response.data.length > 0) {
@@ -60,7 +60,7 @@ export default function Exercises() {
 
     axios
       .post(
-        "http://localhost:5001/exercises/add",
+        "https://motion-canvas-ashen.vercel.app/exercises/add",
         exercise
       )
       .then((res) => console.log(res.data));
